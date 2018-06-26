@@ -2,7 +2,7 @@
     "env": {
         "node": true,
         "browser": true,
-        "es6": true // enables es6 features
+        "es6": true
     },
     "parser": "babel-eslint",
     "extends": "airbnb"
