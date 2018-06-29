@@ -1,0 +1,13 @@
+.logo-container {
+    width: auto;
+    display: inline-block;
+    height: auto
+}
+.main-logo {
+    width: auto;
+    max-width: 100%;
+}
+
+.logo-link {
+    display: inline-block;
+}
