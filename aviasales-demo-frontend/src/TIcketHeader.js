@@ -22,13 +22,15 @@ function HeadContainer(props) {
     return <div {...props}/>
 }
 
+function Label(props) {
+    return <label {...props}/>
+}
+
 function Inputs(props) {
     return (
         <input {...props}/>
     )
 }
-
-
 const MainHeaderStyled = styled(MainHeader) `
     width: 100%;
     background-color: rgb(33, 150, 243);
@@ -40,12 +42,29 @@ const ButtonSearch = styled(Buttons)`
 `;
 
 const InputsStyled = styled(Inputs) `
-    padding: 18px;
+    width: auto;
+    height: 20px;
+    padding: 9px 67px 18px;
     background-color: #fff;
     border: 1px solid blue;
     position: relative;
 `
+const LabelStyled = styled(Label) `
+    width: auto;
+    height: auto;
+`
 
+function Inputs(props) {
+    return(
+    <div className="inputs-container">
+        <div className="col-xs-2 fields">
+            <div className ="input-container">
+                <InputsStyled className= {props.className}  id={props.id} value={props.value}></InputsStyled>
+            </div>
+        </div>
+    </div>    
+    );
+}
 function Header(props) {
     return(
        <MainHeaderStyled className="col-xs-12
@@ -70,7 +89,10 @@ class HeaderComponent extends React.Component {
     }
     render() {
         return (  
-            <Header srcSet= {logologo} width="auto" height="100%" />
+            <div>
+                <Header srcSet ={logologo} width="auto" height="100%" />
+                {/* <Inputs className="input input-to" id="input-to" value="Москва" children="Откуда"/> */}
+            </div>
         )
     }
 }
