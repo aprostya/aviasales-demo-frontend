@@ -1,0 +1,32 @@
+.logo-container {
+    width: auto;
+    display: inline-block;
+    height: auto
+}
+.main-logo {
+    width: auto;
+    max-width: 100%;
+}
+
+.logo-link {
+    display: inline-block;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    background-color: rgb(33, 150, 243);
+}
+
+.header-container {
+    width: 1340px;
+    max-width: 1340px;
+    margin: 0 auto;
+}
+
+.input-container {
+    margin-right: 2px;
+}
