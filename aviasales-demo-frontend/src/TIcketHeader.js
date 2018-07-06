@@ -7,6 +7,7 @@ import './TicketHeader.css';
 import styled from "styled-components";
 import 'flexboxgrid2/flexboxgrid2.css';
 import './style.css';
+import 'normalize.css';
 
 function LogoImg(props) {
     return <img {...props}/>;
@@ -18,6 +19,11 @@ function InputsContainer(props) {
 function MainHeader(props) {
     return <div {...props}/>;
 }
+
+function SpanHeader(props) {
+    return <span {...props}/>;
+}
+
 function Buttons(props) {
     return <button {...props} />;
 }
@@ -31,7 +37,7 @@ function HeadContainer(props) {
 }
 
 function Label(props) {
-    return <label {...props}/>
+  return <label {...props}/>
 }
 
 function SelectContainer(props) {
@@ -48,35 +54,43 @@ const ButtonSearch = styled(Buttons)`
     height: 58px;
     font-size: 20px;
     background-color: #FF9241;
+    color: #fff;
+    font-family: inherit;
 `;
 
 const InputsContainerStyled = styled(InputsContainer) `
     display: flex;
     flex-direction: row;
-`
+    height: 56px;
+`;
 const InputsStyled = styled(Inputs) `
     width: auto;
     height: 20px;
     font-size: 16px;
-    padding: 9px 67px 18px;
+    padding: 18px;
     background-color: #fff;
     border: 1px solid blue;
     position: relative;
-`
+`;
+
+const SpanHeaderStyled = styled(SpanHeader) `
+    positon: absolute;
+    color: #A0B0B9;
+`;
 
 const PassangersSelectStyled = styled(InputsContainer) `
     width: auto;
     height: 20px;
     font-size: 16px;
-    padding: 9px 67px 18px;
+    padding: 18px;
     background-color: #fff;
     border: 1px solid blue;
     position: relative;
-`
+`;
 const LabelStyled = styled(Label) `
     width: auto;
     height: auto;
-`
+`;
 
 function PassangersSelectGroup(props) {
   return (
@@ -100,13 +114,13 @@ function Inputes(props) {
   return (
     <div className = "input-container">
       <InputsStyled className= {props.className} id={props.id}  placeholder={props.placeholder} 
-      defaultValue={props.defaultValue} />
+        defaultValue={props.defaultValue} />
     </div>
   );
 }
 
 function Header(props) {
-    return(
+    return (
       <MainHeaderStyled className="col-xs-12
        col-sm-12
        col-md-12
@@ -139,6 +153,7 @@ class HeaderComponent extends React.Component {
                       <Inputes className="input input--calendar_from" id="input-calendar-from" placeholder="10 сентября, пн"/>
                       <Inputes className="input input--calendar_to" id="input-calendar-to" placeholder="3 марта, сб"/>
                       <PassangersSelectGroup className="input input--dropdown" id="input--dropdown" children="1 пассажир, эконом"></PassangersSelectGroup>
+                      <ButtonSearchOrange className="btn btn--search" children="Найти билеты"/>
                     </InputsContainerStyled>
                  </div>
             </div>
