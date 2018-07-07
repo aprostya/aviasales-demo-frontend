@@ -7,7 +7,6 @@ import './TicketHeader.css';
 import styled from "styled-components";
 import 'flexboxgrid2/flexboxgrid2.css';
 import './style.css';
-import 'normalize.css';
 
 function LogoImg(props) {
     return <img {...props}/>;
@@ -19,11 +18,6 @@ function InputsContainer(props) {
 function MainHeader(props) {
     return <div {...props}/>;
 }
-
-function SpanHeader(props) {
-    return <span {...props}/>;
-}
-
 function Buttons(props) {
     return <button {...props} />;
 }
@@ -37,7 +31,7 @@ function HeadContainer(props) {
 }
 
 function Label(props) {
-  return <label {...props}/>
+    return <label {...props}/>
 }
 
 function SelectContainer(props) {
@@ -53,25 +47,16 @@ const ButtonSearch = styled(Buttons)`
     width: 194px;
     height: 58px;
     font-size: 20px;
-    background-color: #FF9241;
-    color: #fff;
-    font-family: inherit;
 `;
 
 const InputsContainerStyled = styled(InputsContainer) `
     display: flex;
     flex-direction: row;
-<<<<<<< HEAD
 `
-=======
-    height: 56px;
-`;
->>>>>>> 42d6d2d5d3e9f2e2a4aa03226963f72fc53b480b
 const InputsStyled = styled(Inputs) `
     width: auto;
     height: 20px;
     font-size: 16px;
-<<<<<<< HEAD
     padding: 9px 67px 18px;
     background-color: #fff;
     border: 1px solid blue;
@@ -81,35 +66,12 @@ const InputsStyled = styled(Inputs) `
 const PassangersSelectStyled = InputsStyled.extend `
 
 `
-=======
-    padding: 18px;
-    background-color: #fff;
-    border: 1px solid blue;
-    position: relative;
-`;
-
-const SpanHeaderStyled = styled(SpanHeader) `
-    positon: absolute;
-    color: #A0B0B9;
-`;
-
-const PassangersSelectStyled = styled(InputsContainer) `
-    width: auto;
-    height: 20px;
-    font-size: 16px;
-    padding: 18px;
-    background-color: #fff;
-    border: 1px solid blue;
-    position: relative;
-`;
->>>>>>> 42d6d2d5d3e9f2e2a4aa03226963f72fc53b480b
 const LabelStyled = styled(Label) `
     width: auto;
     height: auto;
-`;
+`
 
 function PassangersSelectGroup(props) {
-<<<<<<< HEAD
     return (
         <div className = "input-container">
             <PassangersSelectStyled className={props.className} children={props.children}/>
@@ -125,59 +87,29 @@ function Inputes(props) {
     );
 };
 
-=======
-  return (
-    <div className="input-container">
-      <div className="dropdown-wrapper">
-        <PassangersSelectStyled className={props.className} children={props.children}/>
-      </div>
-    </div>
-  );
-}
-
-function ButtonSearchOrange(props) {
-  return(
-    <div className="buttons-container">
-      <ButtonSearch className={props.className} children={props.children}/>
-    </div>
-  )
-}
-
-function Inputes(props) {
-  return (
-    <div className = "input-container">
-      <InputsStyled className= {props.className} id={props.id}  placeholder={props.placeholder} 
-        defaultValue={props.defaultValue} />
-    </div>
-  );
-}
-
->>>>>>> 42d6d2d5d3e9f2e2a4aa03226963f72fc53b480b
 function Header(props) {
-    return (
-      <MainHeaderStyled className="col-xs-12
+    return(
+       <MainHeaderStyled className="col-xs-12
        col-sm-12
        col-md-12
        col-lg-12">
-         <a className="logo-link" href="#">
-          <picture className="logo-container">
-              <LogoImg className="main-logo" srcSet={props.srcSet} alt={props.className} width={props.width} height={props.height}/>
-          </picture>
-        </a>
+        <a className="logo-link" href="#">
+            <picture className="logo-container">
+                <LogoImg className="main-logo" srcSet={props.srcSet} alt={props.className} width={props.width} height={props.height}/>
+            </picture>
+            </a>
        </MainHeaderStyled> 
     );
 }
 
 
 class HeaderComponent extends React.Component {
-  constructor(props) {
-  super(props);
-    // this.state = {toggle: none};
-    // this.showText = this.showText.bind(this);
+    constructor(props) {
+        super(props);
+        // this.state = {toggle: none};
+        // this.showText = this.showText.bind(this);
     }
-
     render() {
-<<<<<<< HEAD
         return (  
             <div className="header-container col-xs-12 col-lg-12">
                 <Header srcSet ={logologo} width="auto" height="100%" />
@@ -191,22 +123,6 @@ class HeaderComponent extends React.Component {
                     </InputsContainerStyled>
                     </div>
                 </div>
-=======
-    return (  
-      <div className="header-container col-xs-12 col-lg-12">
-              <Header srcSet ={logologo} width="auto" height="100%" />
-              <div className="col-xs-2 col-lg-12 fields">
-                   <InputsContainerStyled>
-                      <Inputes className="input input--to" id="input-to" placeholder="Москва"/>
-                      <Inputes className="input input--from" id="input-from" placeholder="Барселона"/>
-                      <Inputes className="input input--calendar_from" id="input-calendar-from" placeholder="10 сентября, пн"/>
-                      <Inputes className="input input--calendar_to" id="input-calendar-to" placeholder="3 марта, сб"/>
-                      <PassangersSelectGroup className="input input--dropdown" id="input--dropdown" children="1 пассажир, эконом"></PassangersSelectGroup>
-                      <ButtonSearchOrange className="btn btn--search" children="Найти билеты"/>
-                    </InputsContainerStyled>
-                 </div>
-            </div>
->>>>>>> 42d6d2d5d3e9f2e2a4aa03226963f72fc53b480b
         )
     }
 }
