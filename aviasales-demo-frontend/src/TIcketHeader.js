@@ -48,6 +48,8 @@ function Inputs(props) {
 }
 const MainHeaderStyled = styled(MainHeader)`
     width: 100%;
+    padding-top: 14px;
+    padding-bottom: 40px;
 `;
 const ButtonSearch = styled(Buttons)`
     width: 194px;
@@ -56,6 +58,7 @@ const ButtonSearch = styled(Buttons)`
     background-color: #FF9241;
     color: #fff;
     margin-left: 16px;
+    font-weight: bold;
     font-family: inherit;
 `;
 
@@ -185,7 +188,7 @@ function Header(props) {
 class HeaderComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.spanObject = { spanName1: 'input-icon input-icon--calendar', spanName2: 'input-icon input-icon--close', spanName3: 'input-icon input-icon--select' };
+    this.spanObject = { spanName1: 'input-icon input-icon--calendar', spanName2: 'input-icon input-icon--close', spanName3: 'input-icon input-icon--select', spanName4: 'input-icon input-icon--arrows' };
     // this.state = {toggle: none};
     // this.showText = this.showText.bind(this);
   }
@@ -196,7 +199,9 @@ class HeaderComponent extends React.Component {
         <Header srcSet={logologo} width="auto" height="100%" />
         <div className="col-xs-2 col-lg-12 fields">
           <InputsContainerStyled>
-            <Inputes className="input input--to" id="input-to" placeholder="Москва" children="Mow" />
+            <Inputes className="input input--to" id="input-to" placeholder="Москва" children="Mow">
+            </Inputes>
+            <SpanHeaderIconsStyled className={this.spanObject.spanName4}/>
             <Inputes className="input input--from" id="input-from" placeholder="Барселона" children="bcn" />
             <InputesIcons className="input input--calendar_from" id="input-calendar-from" placeholder="10 сентября, пн" />
             <SpanHeaderIconsStyled className={this.spanObject.spanName1} />

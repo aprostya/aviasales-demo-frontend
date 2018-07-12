@@ -32,6 +32,13 @@ body {
     max-width: 1340px;
     margin: 0 auto;
 }
+#transplantation {
+  width: 1340px;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.main-content {}
 
 .input-container {
     margin-right: 2px;
@@ -44,4 +51,8 @@ body {
 
 .buttons-container {
   margin-left: 30px;
+}
+
+.header-container {
+  padding-bottom: 32px;
 }

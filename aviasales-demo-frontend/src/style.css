@@ -32,3 +32,26 @@
     width: 14px;
     height: 14px;   
 }
+
+.input-icon--arrows::after {
+    content: '';
+    background-image: url('./img/arrow.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 14px;
+    height: 14px;   
+}
+
+.input-icon--arrows::before{
+    content: '';
+    background-image: url('./img/arrow.svg');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    width: 14px;
+    height: 14px;   
+    transform: scale(-1,1);
+}
