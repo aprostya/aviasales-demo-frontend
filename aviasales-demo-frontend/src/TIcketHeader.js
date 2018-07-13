@@ -217,27 +217,3 @@ class HeaderComponent extends React.Component {
   }
 }
 export default HeaderComponent;
-// class HeaderComponent extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.buttonDescr={descr: "Найти билеты"};
-//         this.labelTextFrom={fromText: "Откуда"};
-//         this.labelTextTo = {toText: "Куда"};
-//     }
-//       render() {
-//         return (
-//             <div className="ticket-content">
-//                 <div className="main-logo">
-//                     <LogoImg className="main-logo__img" alt={props.alt}/>
-//                 </div>
-//                 <ButtonSearch
-//                     className="btn-search"
-//                     type="button"
-//                     children="info"
-//                     onClick={this.showText}>
-//                 </ButtonSearch>
-//                 <MovieTexts style={{display: this.state.toggle}}/>
-//             </div>
-//         )
-//     }
-// }
