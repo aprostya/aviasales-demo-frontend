@@ -15,9 +15,9 @@ function Header(props) {
 }
 function ListItems(props) {
   return (
-  <div className={props.className}>
-    <input type="checkbox" name="all" id={props.id} />
-    <label htmlFor={props.id}>
+    <div className="inputs-container">
+    <input type="checkbox" name="all" id={props.id} className={props.className}/>
+    <label htmlFor={props.id} className="label-checkbox label-checkbox--transplantation-block">
       {props.title}
     </label>
   </div>
@@ -46,7 +46,13 @@ function TranspanationContainer(props) {
       <h2 className="menu-header">
         {props.title}
       </h2>
-    <ListItems title="Все"/>
+      <div className="inputs-list">
+        <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
+        <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation " />
+        <ListItems title="1 пересадка" id="transplantation-1" className="input-checkbox input-checkbox--transplantation " />
+        <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation " />
+        <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation " />
+      </div>  
     </Header>
   );
 }
@@ -60,9 +66,9 @@ class TransplantionComponent extends React.Component {
 
   render() {
     return (
-      <div className="col-lg-3">
+      <div className="col-lg-3 transpilantation-container">
         <TranspanationContainer title="Пересадки">
-          <ListItems className="checkbox-container" id="all" title="Все" />
+          <ListItems className="checkbox-container"/>
         </TranspanationContainer>
       </div>
     );
