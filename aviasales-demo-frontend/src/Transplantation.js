@@ -13,14 +13,20 @@ import 'normalize.css';
 function Header(props) {
   return <div {...props} />;
 }
+
+function TravelPrice(...props) {
+  return <span {...props} />;
+}
+
 function ListItems(props) {
   return (
     <div className="inputs-container">
-    <input type="checkbox" name="all" id={props.id} className={props.className}/>
-    <label htmlFor={props.id} className="label-checkbox label-checkbox--transplantation-block">
-      {props.title}
-    </label>
-  </div>
+      <input type="checkbox" name="all" id={props.id} className={props.className} />
+      <label htmlFor={props.id} className="label-checkbox label-checkbox--transplantation-block">
+        {props.title}
+      </label>
+      <TravelPrice className={props.className} id={props.id} />
+    </div>
   );
 }
 
@@ -34,6 +40,9 @@ const HeaderStyled = styled(Header)`
   width: 100%;
 `;
 
+const TravelPriceStyled = styled(TravelPrice)`
+  color: #A0B0B9;
+`;
 // function MenuLeftHeader(props) {
 //   return(
 
@@ -48,11 +57,13 @@ function TranspanationContainer(props) {
       </h2>
       <div className="inputs-list">
         <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
-        <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation " />
-        <ListItems title="1 пересадка" id="transplantation-1" className="input-checkbox input-checkbox--transplantation " />
-        <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation " />
-        <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation " />
-      </div>  
+        <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation">
+          <TravelPrice className="money-transpilation money-transpilation--notranspilation" id="notranspilation-cost" />
+        </ListItems>
+        <ListItems title="1 пересадка" id="transplantation-1" className="input-checkbox input-checkbox--transplantation" />
+        <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" />
+        <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" />
+      </div>
     </Header>
   );
 }
@@ -68,7 +79,9 @@ class TransplantionComponent extends React.Component {
     return (
       <div className="col-lg-3 transpilantation-container">
         <TranspanationContainer title="Пересадки">
-          <ListItems className="checkbox-container"/>
+          <ListItems className="checkbox-container">
+            <TravelPrice  className="llsfsd"/>
+          </ListItems>
         </TranspanationContainer>
       </div>
     );
