@@ -8,6 +8,7 @@ import 'flexboxgrid2/flexboxgrid2.css';
 import './style.css';
 import 'normalize.css';
 import MenuHeader from './MenuHeader';
+import FlyComponent from './FlyTime';
 
 
 function Price(props) {
@@ -80,6 +81,7 @@ class TransplantionComponent extends React.Component {
     return (
       <div className="col-lg-3 transpilantation-container">
         <TranspanationContainer title="Прибытие" />
+        <FlyComponent />
       </div>
     );
   }

@@ -8,7 +8,7 @@ import Transplantation from './Transplantation';
 import 'flexboxgrid2/flexboxgrid2.css';
 import './style.css';
 import 'normalize.css';
-
+import MenuHeader from './MenuHeader';
 function Price(props) {
   return <span {...props}/>
 }
@@ -24,19 +24,12 @@ function Header(props) {
 }
 
 
-function FlyContainer(props) {
-      <div className="flyes-container">
-          <span className="fly-item">{props.fly}</span>
-          <span className="fly-item">{props.fly2}</span>
-      </div>  
-}
-
-function Mesure(props) {
-
-}
-
-
-
+// function FlyContainer(props) {
+//       <div className="flyes-container">
+//           <span className="fly-item">{props.fly}</span>
+//           <span className="fly-item">{props.fly2}</span>
+//       </div>  
+// }
 function SliderContainer(props) {
   return (
         <div className="flyes-container">
@@ -50,46 +43,32 @@ function Arrival(props) {
   return (
     <div className="range-container">
       <div className="arrives-container">
-        <span className="arrive-descr arrive-descr--from">{props.flyDescr}</span>
-        <span className="arrive-descr arrive-descr--to">{props.flyDescr2}</span>
-        <input type="range" className="fly-range fly-range--arrival-time">
+        <span className="arrive-descr arrive-descr--from">{props.flyDescr} {props.townName} 
+          {'c' + '' + props.time}, {props.date}</span>
+        <span className="arrive-descr arrive-descr--to">{"до" + ' ' +  props.date2} 
+          {props.timeBefore} 
+        </span>
+        <input type="range" className="fly-range fly-range--arrival-time" />
       </div>  
     </div>
   )
 }
 
 
-function menuLeftHeader(props) {
-  return <div {...props} />;
-}
-
-const HeaderStyled = styled(Header)`
-  background-color: #fff;
-  color: #5B5B5C;
-  width: 100%;
-`;
-// function MenuLeftHeader(props) {
-//   return(
-
-//   )
-// }
-
-function TranspanationContainer(props) {
+function FlyContainer(props) {
   return (
     <Header>
-      <MenuHeader>{props.title}</MenuHeader>
-      <div className="inputs-list">
-        {/* <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />  
-        <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation" titleCost="7 712 &#8381;" />
-        <ListItems title="1 пересадка" id="transplantation-1" className="input-checkbox input-checkbox--transplantation" titleCost="11 150 &#8381;" />
-        <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" titleCost="16 821 &#8381;" />
-        <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" /> */}
+      <MenuHeader className="menu-header">{props.title}</MenuHeader>
+      <div className="arrivals-list">
+         <SliderContainer fly="Москва" fly2 ="Барселона" />
+         <Arrival flyDescr="Вылет из" townName="Москвы" time="00.05" date="24 февраля" date2="23.45" timeBefore="24 фев."/>
+         <Arrival flyDescr="Прибытие в" townName="Барселону" time="3.05" date="24 февраля" date2="13.50" timeBefore="26 фев."/>
       </div>
     </Header>
   );
 }
 
-class TransplantionComponent extends React.Component {
+class FlyComponent extends React.Component {
   constructor(props) {
     super(props);
     // this.state = {toggle: none};
@@ -98,11 +77,13 @@ class TransplantionComponent extends React.Component {
 
   render() {
     return (
-      <div className="col-lg-3 transpilantation-container">
-        <TranspanationContainer title="Пересадки">
-        </TranspanationContainer>
+      <div>
+        <FlyContainer title="Время вылета и пересадки">
+        </FlyContainer>
       </div>
     );
   }
 }
 
+
+export default FlyComponent;

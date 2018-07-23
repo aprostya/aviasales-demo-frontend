@@ -153,3 +153,20 @@
     top: 2px;
     height: 16px;
 }
+
+.flyes-container {
+    display: flex;
+    justify-content: row;
+    font-weight: bold;
+
+}
+
+
+.fly-item {
+    margin-right: 10px;
+    color: #323333;
+}
+
+.arrivals-list {
+    padding-left: 16px;
+}
