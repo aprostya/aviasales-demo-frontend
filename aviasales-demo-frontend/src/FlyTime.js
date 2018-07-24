@@ -43,15 +43,14 @@ function Arrival(props) {
   return (
     <div className="range-container">
       <div className="arrives-container">
-        <span className="arrive-descr arrive-descr--from">{props.flyDescr} {props.townName} 
-          {'c' + '' + props.time}, {props.date}</span>
-        <span className="arrive-descr arrive-descr--to">{"до" + ' ' +  props.date2} 
-          {props.timeBefore} 
-        </span>
+        <div className="arrivals-container__descr-group">
+          <span className="arrive-descr arrive-descr--from">{props.flyDescr} {props.townName} <br/> c {props.time}, {props.date}</span>
+          <span className="arrive-descr arrive-descr--to"> до {props.date2} {props.timeBefore}</span>
+        </div>  
         <input type="range" className="fly-range fly-range--arrival-time" />
       </div>  
     </div>
-  )
+  );
 }
 
 
