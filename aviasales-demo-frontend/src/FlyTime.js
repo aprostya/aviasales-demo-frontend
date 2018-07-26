@@ -30,7 +30,7 @@ function Header(props) {
 //           <span className="fly-item">{props.fly2}</span>
 //       </div>  
 // }
-function SliderContainer(props) {
+function FlyesDescr(props) {
   return (
         <div className="flyes-container">
           <span className="fly-item">{props.fly}</span>
@@ -46,31 +46,33 @@ function Arrival(props) {
         <div className="arrivals-container__descr-group">
           <span className="arrive-descr arrive-descr--from">{props.flyDescr} {props.townName} <br/> c {props.time}, {props.date}</span>
           <span className="arrive-descr arrive-descr--to"> до {props.date2} {props.timeBefore}</span>
-        </div>  
-        <div className="scale">
-          <div className="bar">
-        </div>
-        <div className="range-toggle range-toggle-min">
-        </div>
-        <div className="range-toggle range-toggle-max">
-        </div>
-      </div>  
+        </div>    
     </div>
   </div>  
   );
 }
 
+function Slider(props) {
+  return (
+      <div className="scale">
+        <div className="bar"></div>
+        <div className="range-toggle range-toggle-min">
+        </div>
+        <div className="range-toggle range-toggle-max">
+        </div>
+      </div>
+  )
+}
+
 
 function FlyContainer(props) {
   return (
-    <Header>
-      <MenuHeader className="menu-header">{props.title}</MenuHeader>
+    <div>
       <div className="arrivals-list">
-         <SliderContainer fly="Москва" fly2 ="Барселона" />
-         <Arrival flyDescr="Вылет из" townName="Москвы" time="00.05" date="24 февраля" date2="23.45" timeBefore="24 фев."/>
-         <Arrival flyDescr="Прибытие в" townName="Барселону" time="3.05" date="24 февраля" date2="13.50" timeBefore="26 фев."/>
+          <Arrival flyDescr="Вылет из" townName="Москвы" time="00.05" date="24 февраля" date2="23.45" timeBefore="24 фев."/>
+          <Arrival flyDescr="Прибытие в" townName="Барселону" time="3.05" date="24 февраля" date2="13.50" timeBefore="26 фев."/>
       </div>
-    </Header>
+    </div>
   );
 }
 
@@ -84,9 +86,12 @@ class FlyComponent extends React.Component {
   render() {
     return (
       <div>
-        <FlyContainer title="Время вылета и пересадки">
-        </FlyContainer>
-        <FlyContainer></FlyContainer>
+        <MenuHeader className="menu-header">Время вылета и прибытия</MenuHeader>
+        <div>
+        <FlyesDescr fly="Москва" fly2 ="Барселона" />
+        <Slider/>
+        <Slider/>
+        </div>
       </div>
     );
   }
