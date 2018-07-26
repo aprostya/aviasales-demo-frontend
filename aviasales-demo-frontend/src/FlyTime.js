@@ -86,6 +86,7 @@ class FlyComponent extends React.Component {
       <div>
         <FlyContainer title="Время вылета и пересадки">
         </FlyContainer>
+        <FlyContainer></FlyContainer>
       </div>
     );
   }
