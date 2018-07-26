@@ -47,9 +47,16 @@ function Arrival(props) {
           <span className="arrive-descr arrive-descr--from">{props.flyDescr} {props.townName} <br/> c {props.time}, {props.date}</span>
           <span className="arrive-descr arrive-descr--to"> до {props.date2} {props.timeBefore}</span>
         </div>  
-        <input type="range" className="fly-range fly-range--arrival-time" />
+        <div className="scale">
+          <div className="bar">
+        </div>
+        <div className="range-toggle range-toggle-min">
+        </div>
+        <div className="range-toggle range-toggle-max">
+        </div>
       </div>  
     </div>
+  </div>  
   );
 }
 
