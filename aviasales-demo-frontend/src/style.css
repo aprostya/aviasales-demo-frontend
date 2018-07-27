@@ -127,6 +127,7 @@
     text-transform: uppercase;
     font-size: 12px;
     padding-bottom: 26px;
+    margin-bottom: 0;
     padding-left: 40px;
     position: relative;
 }
@@ -156,8 +157,9 @@
 
 .flyes-container {
     display: flex;
-    justify-content: row;
+    flex-direction: column;
     font-weight: bold;
+    margin-bottom: 15px;
 
 }
 
@@ -168,7 +170,6 @@
 }
 
 .arrivals-list {
-    padding-left: 16px;
     line-height: 18px;
 }
 
@@ -187,49 +188,9 @@
 .arrive-descr {
     display: block;
     width: auto;
+    font-weight: normal;
 }
-input[type=range] {
-    -webkit-appearance: none; /* Скрывает слайдер, чтобы можно было создать свой */
-    width: 100%; /* Указание параметра ширины требуется для Firefox. */
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-  }
-  
-  input[type=range]:focus {
-    outline: none; /* Убирает голубую границу у элемента. Хотя, возможно, и стоит создавать некоторое оформления для состояния фокуса в целях обеспечения доступности. */
-  }
-  
-  input[type=range]::-ms-track {
-    width: 100%;
-    cursor: pointer;
-    background: transparent; /* Скрывает слайдер, чтобы можно было добавить собственные стили. */
-    border-color: transparent;
-    color: transparent;
-  }
-
-  input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border: 1px solid #D6D9DA;
-    border-radius: 10px;
-    background: #ffffff;
-    cursor: pointer;
-    margin-top: -14px; /* Вам нужно указать значение для поля в Chrome, но в Firefox и IE это происходит автоматически */
-  }
-
-  input[type=range]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 2px;
-    cursor: pointer;
-    border-radius: 2px;
-    border: 2px solid #00ACDE;
-  }
-
-
-  .bar {
+.bar {
       background:#00ACDE;
       width: 100%;
       height: 2px;
@@ -237,20 +198,44 @@ input[type=range] {
       margin-bottom: 11px;
   }
 
-  .range-toggle  {
+.range-toggle  {
       border-radius: 50%;
       border: 1px solid #D6D9DA;
       background-color: #fff;
       width: 16px;
       height: 16px;
       position: absolute;
-      top: 3px;
+      top: -8px;
   }
 
-  .range-toggle-max {
+.range-toggle-max {
       right: 0;
   }
 
   .scale {
       position: relative;
   }
+
+  .arrive-descr {
+      margin-top: auto;
+  }
+/* 
+  .left-menu-container {
+      padding-left: 20px;
+      padding-right: 18px;
+  } */
+
+.flyes-container {
+    padding-left: 20px;
+    padding-right: 17px;
+}  
+
+.flyes-names {
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+
+.flyes-range-group {
+    margin-bottom: 32px;
+}

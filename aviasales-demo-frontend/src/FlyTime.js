@@ -32,7 +32,7 @@ function Header(props) {
 // }
 function FlyesDescr(props) {
   return (
-        <div className="flyes-container">
+        <div className="flyes-names">
           <span className="fly-item">{props.fly}</span>
           <span className="fly-item">{props.fly2}</span>
         </div>  
@@ -69,8 +69,8 @@ function FlyContainer(props) {
   return (
     <div>
       <div className="arrivals-list">
-          <Arrival flyDescr="Вылет из" townName="Москвы" time="00.05" date="24 февраля" date2="23.45" timeBefore="24 фев."/>
-          <Arrival flyDescr="Прибытие в" townName="Барселону" time="3.05" date="24 февраля" date2="13.50" timeBefore="26 фев."/>
+          <Arrival flyDescr={props.flyDescr} townName={props.townName} time={props.time} date={props.date} date2={props.date2} timeBefore={props.timeBefore}/>
+          {/* <Arrival flyDescr="Прибытие в" townName="Барселону" time="3.05" date="24 февраля" date2="13.50" timeBefore="26 фев."/> */}
       </div>
     </div>
   );
@@ -87,10 +87,21 @@ class FlyComponent extends React.Component {
     return (
       <div>
         <MenuHeader className="menu-header">Время вылета и прибытия</MenuHeader>
-        <div>
-        <FlyesDescr fly="Москва" fly2 ="Барселона" />
-        <Slider/>
-        <Slider/>
+        <div className="flyes-container">
+          <div className="flyes-range-group">
+            <FlyesDescr fly="Москва" fly2 ="Барселона" />
+            <FlyContainer flyDescr="Вылет из" townName="Москвы" time="00.05" date="24 февраля" date2="23.45" timeBefore="24 фев."/>
+            <Slider/>
+            <FlyContainer flyDescr="Прибытие в" townName="Барселону" time="3.05" date="24 февраля" date2="13.50" timeBefore="26 фев."/>
+            <Slider/>
+          </div>  
+          <div className="flyes-range-group">
+            <FlyesDescr fly2 ="Москва" fly="Барселона" />
+            <FlyContainer flyDescr="Вылет из" townName="Барселоны" time="06.05" date="3 мар" date2="23.45" timeBefore="3 мар"/>
+            <Slider/>
+            <FlyContainer flyDescr="Прибытие в" townName="Москву" time="15.00" date="3 мар" date2="09.55" timeBefore="5 мар."/>
+            <Slider/>
+          </div>
         </div>
       </div>
     );
