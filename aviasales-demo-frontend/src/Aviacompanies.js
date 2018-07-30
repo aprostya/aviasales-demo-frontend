@@ -41,6 +41,16 @@ function ListItems(props) {
   );
 }
 
+const ListItemsCustom = (props) => {
+    return (
+      <div className="inputs-container">
+         <input type="checkbox" name="all" id={props.id} className={props.className} />
+         <span className="checkbox-descr">{props.checkboxDescr}</span>
+      </div>
+    );
+}
+
+
 function menuLeftHeader(props) {
   return <div {...props} />;
 }
@@ -57,10 +67,10 @@ const HeaderStyled = styled(Header)`
 //   )
 // }
 
-function TranspanationContainer(props) {
+function AviacompaniesContainer(props) {
   return (
-    <Header>
-      <MenuHeader className="menu-header">{props.title}</MenuHeader>
+    <div>
+      <MenuHeader className="menu-header">Авиакомпании</MenuHeader>
       <div className="inputs-list">
         <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
         <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation" titleCost="7 712 &#8381;" />
@@ -68,7 +78,7 @@ function TranspanationContainer(props) {
         <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" titleCost="16 821 &#8381;" />
         <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" />
       </div>
-    </Header>
+    </div>
   );
 }
 

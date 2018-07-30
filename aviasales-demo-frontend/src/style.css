@@ -132,7 +132,6 @@
     position: relative;
 }
 
-
 .menu-header::after {
     content: "";
     background-image: url('./img/clear.svg');
@@ -144,6 +143,11 @@
     right: 16px;
 }
 
+.menu-header--close-state::after {
+    content: "";
+    background-image: none;
+}
+
 .menu-header::before {
     content: "";
     background-image: url('./img/shapearrowgrey.svg');
@@ -153,6 +157,13 @@
     left: 16px;
     top: 2px;
     height: 16px;
+}
+
+.menu-header--close-state::before {
+    content: "";
+    top: -5px;
+    transform: rotate(-90deg);
+    left: 23px;
 }
 
 .flyes-container {
