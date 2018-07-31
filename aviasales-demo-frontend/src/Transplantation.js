@@ -12,6 +12,7 @@ import FlyComponent from './FlyTime';
 import TransferComponent from './Transfer';
 import LuggageComponent from './Luggage';
 import TravelTimeComponent from './TravelTime';
+import AviacompaniesComponent from './Aviacompanies';
 
 function Price(props) {
   return <span {...props} />;
@@ -87,6 +88,7 @@ class TransplantionComponent extends React.Component {
         <LuggageComponent/>
         <TransferComponent/>
         <TravelTimeComponent/>
+        <AviacompaniesComponent/>
       </div>
     );
   }

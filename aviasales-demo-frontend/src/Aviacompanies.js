@@ -41,16 +41,17 @@ function ListItems(props) {
   );
 }
 
-const ListItemsCustom = (props) => {
-    return (
-      <div className="inputs-container">
-         <input type="checkbox" name="all" id={props.id} className={props.className} />
-         <span className="checkbox-descr">{props.checkboxDescr}</span>
-      </div>
-    );
+function CustomCheckbox(props) {
+  return (
+    <div className="inputs-container">
+      <input type="checkbox" name="all" id={props.id} className={props.className} />
+      <label htmlFor={props.id} className="label-checkbox label-checkbox--transplantation-block">
+        {props.title}
+      </label>
+      <span className="checbox-descr">{props.checkboxDescr}</span>
+    </div>   
+  )
 }
-
-
 function menuLeftHeader(props) {
   return <div {...props} />;
 }
@@ -67,22 +68,22 @@ const HeaderStyled = styled(Header)`
 //   )
 // }
 
-function AviacompaniesContainer(props) {
-  return (
-    <div>
-      <MenuHeader className="menu-header">Авиакомпании</MenuHeader>
-      <div className="inputs-list">
-        <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
-        <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation" titleCost="7 712 &#8381;" />
-        <ListItems title="1 пересадка" id="transplantation-1" className="input-checkbox input-checkbox--transplantation" titleCost="11 150 &#8381;" />
-        <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" titleCost="16 821 &#8381;" />
-        <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" />
-      </div>
-    </div>
-  );
-}
+// function AviacompaniesContainer(props) {
+//   return (
+//     <div>
+//       <MenuHeader className="menu-header">Авиакомпании</MenuHeader>
+//       <div className="inputs-list">
+//         <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
+//         <ListItems title="Star Alliance" id="notransplantation" className="input-checkbox input-checkbox--transplantation" titleCost="11 150 &#8381;" />
+//         <ListItems title="OneWorld" id="transplantation-1" className="input-checkbox input-checkbox--transplantation" titleCost="12 370 &#8381;" />
+//         <ListItems title="SkyTeam" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" titleCost="16 290 &#8381;" />
+//         <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" />
+//       </div>
+//     </div>
+//   );
+// }
 
-class TransplantionComponent extends React.Component {
+class AviacompaniesComponent extends React.Component {
   constructor(props) {
     super(props);
     // this.state = {toggle: none};
@@ -91,15 +92,41 @@ class TransplantionComponent extends React.Component {
 
   render() {
     return (
-      <div className="col-lg-3 transpilantation-container">
-        <TranspanationContainer title="Прибытие" />
+      <div>
+        <MenuHeader className="menu-header">Авиакомпании</MenuHeader>
+        <CustomCheckbox title="Несколько авиакомпаний" id="checkbox-custom-1" className="input-checkbox input-checkbox--transplantation" checkboxDescr="Показывать билеты с перелетами, выполняемыми несколькими авиакомпаниями, включая выбранную" />
+        <div className="inputs-list">
+          <h3 className="inputs-list__header">Альянсы</h3>
+           <ListItems title="Все" id="all-alianses" className="input-checkbox input-checkbox--transplantation" />
+           <ListItems title="Star Alliance" id="alians-1" className="input-checkbox input-checkbox--transplantation" titleCost="11 150 &#8381;" />
+           <ListItems title="OneWorld" id="alians-2" className="input-checkbox input-checkbox--transplantation" titleCost="12 370 &#8381;" />
+           <ListItems title="SkyTeam" id="alians-3" className="input-checkbox input-checkbox--transplantation" titleCost="16 290 &#8381;" />
+           <ListItems title="3 пересадки" id="alians-4" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" />
+        </div>
+        <div className="inputs-list">
+          <h3 className="inputs-list__header">Авиакомпании</h3>
+           <ListItems title="Все" id="all-aviacompanies" className="input-checkbox input-checkbox--transplantation" />
+           <ListItems title="Aegean Airlines" id="aviacompany-1" className="input-checkbox input-checkbox--transplantation" titleCost="20 357 &#8381;" />
+           <ListItems title="Air Algerie" id="aviacompany-2" className="input-checkbox input-checkbox--transplantation" titleCost="29 105 &#8381;" />
+           <ListItems title="Air Europa" id="aviacompany-3" className="input-checkbox input-checkbox--transplantation" titleCost="16 290 &#8381;" />
+           <ListItems title="Air Moldova" id="aviacompany-4" className="input-checkbox input-checkbox--transplantation" titleCost="21 986 &#8381;" />
+           <ListItems title="Alitalia" id="aviacompany-5" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+           <ListItems title="Alitalia CityLiner" id="aviacompany-6" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+           <ListItems title="Belle Air" id="aviacompany-7" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+           <ListItems title="Alitalia" id="aviacompany-8" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+           <ListItems title="Alitalia CityLiner" id="aviacompany-9" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+           <ListItems title="British Airways" id="aviacompany-10" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+           <ListItems title="Brussels Airlines" id="aviacompany-11" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+           <ListItems title="Bulgaria Air" id="aviacompany-12" className="input-checkbox input-checkbox--transplantation" titleCost="28 986 &#8381;" />
+        </div>
+        {/* <TranspanationContainer title="Прибытие" />
         <FlyComponent />
         <LuggageComponent/>
         <TransferComponent/>
-        <TravelTimeComponent/>
+        <TravelTimeComponent/> */}
       </div>
     );
   }
 }
 
-export default TransplantionComponent;
+export default AviacompaniesComponent;
