@@ -13,6 +13,11 @@ import TransferComponent from './Transfer';
 import LuggageComponent from './Luggage';
 import TravelTimeComponent from './TravelTime';
 import AviacompaniesComponent from './Aviacompanies';
+import AirportsComponent from './Airports';
+import AgentsComponent from './Agents';
+import AirportTranspilationsComponent from './AirportTranspilations';
+import DisableFiltersComponent from './DisableFilters';
+
 
 function Price(props) {
   return <span {...props} />;
@@ -60,7 +65,7 @@ const HeaderStyled = styled(Header)`
 
 function TranspanationContainer(props) {
   return (
-    <Header>
+    <Header className="transpilation-block">
       <MenuHeader className="menu-header">{props.title}</MenuHeader>
       <div className="inputs-list">
         <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
@@ -89,6 +94,10 @@ class TransplantionComponent extends React.Component {
         <TransferComponent/>
         <TravelTimeComponent/>
         <AviacompaniesComponent/>
+        <AirportsComponent/>
+        <AirportTranspilationsComponent/>
+        <AgentsComponent/>
+        <DisableFiltersComponent/>
       </div>
     );
   }

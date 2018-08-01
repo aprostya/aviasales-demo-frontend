@@ -43,7 +43,7 @@ function ListItems(props) {
 
 function CustomCheckbox(props) {
   return (
-    <div className="inputs-container">
+    <div className="inputs-container inputs-container--custom-checkbox">
       <input type="checkbox" name="all" id={props.id} className={props.className} />
       <label htmlFor={props.id} className="label-checkbox label-checkbox--transplantation-block">
         {props.title}

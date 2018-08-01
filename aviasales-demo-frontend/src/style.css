@@ -1,3 +1,7 @@
+body {
+    background-color: #EAEAEA;
+}
+
 .input-icon {
     cursor: pointer;
 }
@@ -121,6 +125,7 @@
     color: #5B5B5C;
     margin-top: 56px;
     border-bottom: 1px solid #DDDDDD;
+    background-color: #fff;
 }
 
 .menu-header {
@@ -171,6 +176,7 @@
     flex-direction: column;
     font-weight: bold;
     margin-bottom: 15px;
+    padding-left: 18px;
 
 }
 
@@ -237,7 +243,6 @@
   } */
 
 .flyes-container {
-    padding-left: 20px;
     padding-right: 17px;
 }  
 
@@ -249,4 +254,32 @@
 
 .flyes-range-group {
     margin-bottom: 32px;
+}
+.inputs-container--custom-checkbox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 70%;
+    line-height: 16px;
+    padding-left: 12px;
+}
+
+.checbox-descr {
+    margin-top: 15px;
+}
+.inputs-list__header {
+    padding-left: 12px;
+    color: #323333;
+    font-size: 12px;
+}
+
+.menu-header--disable-filters {
+    color: #00BDE4;
+    padding-left: 15px;
+}
+
+.menu-header--disable-filters::before{
+    content: "";
+    background-image: none;
+    font-weight: normal;
 }

@@ -73,7 +73,8 @@ const InputsStyled = styled(Inputs)`
     font-size: 16px;
     padding: 18px;
     background-color: #fff;
-    border: 1px solid blue;
+    border: 1px solid #fff;
+    border-radius: 2px;
     position: relative;
 `;
 
@@ -97,7 +98,7 @@ const PassangersSelectStyled = styled(InputsContainer)`
     font-size: 16px;
     padding: 18px;
     background-color: #fff;
-    border: 1px solid blue;
+    border: 1px solid #fff;
     position: relative;
 `;
 const LabelStyled = styled(Label)`
