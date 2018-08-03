@@ -133,7 +133,7 @@ body {
     font-size: 12px;
     padding-bottom: 26px;
     margin-bottom: 0;
-    padding-left: 40px;
+    padding-left: 31px;
     position: relative;
 }
 
@@ -168,7 +168,7 @@ body {
     content: "";
     top: -5px;
     transform: rotate(-90deg);
-    left: 23px;
+    left: 15px;
 }
 
 .flyes-container {
@@ -282,4 +282,8 @@ body {
     content: "";
     background-image: none;
     font-weight: normal;
+}
+
+.select-container {
+    margin-bottom: 10px;
 }

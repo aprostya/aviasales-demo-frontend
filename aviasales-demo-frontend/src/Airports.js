@@ -19,7 +19,7 @@ class AirportsComponent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="select-container">
         <MenuHeader className="menu-header menu-header--close-state">
         Аэропорты
         </MenuHeader>

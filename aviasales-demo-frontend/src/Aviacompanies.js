@@ -92,7 +92,7 @@ class AviacompaniesComponent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="items-container items-container--aviacompanies">
         <MenuHeader className="menu-header">Авиакомпании</MenuHeader>
         <CustomCheckbox title="Несколько авиакомпаний" id="checkbox-custom-1" className="input-checkbox input-checkbox--transplantation" checkboxDescr="Показывать билеты с перелетами, выполняемыми несколькими авиакомпаниями, включая выбранную" />
         <div className="inputs-list">
