@@ -135,6 +135,7 @@ body {
     margin-bottom: 0;
     padding-left: 31px;
     position: relative;
+    cursor: pointer;
 }
 
 .menu-header::after {
@@ -147,6 +148,11 @@ body {
     left: auto;
     right: 16px;
 }
+
+.menu-header--close-state {
+    transition: all 2s;
+}
+
 
 .menu-header--close-state::after {
     content: "";
@@ -285,5 +291,5 @@ body {
 }
 
 .select-container {
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
