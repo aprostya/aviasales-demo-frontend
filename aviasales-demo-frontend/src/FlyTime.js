@@ -22,14 +22,6 @@ const PriceStyled = styled(Price)`
 function Header(props) {
   return <div {...props} />;
 }
-
-
-// function FlyContainer(props) {
-//       <div className="flyes-container">
-//           <span className="fly-item">{props.fly}</span>
-//           <span className="fly-item">{props.fly2}</span>
-//       </div>  
-// }
 function FlyesDescr(props) {
   return (
         <div className="flyes-names">
@@ -76,18 +68,32 @@ function FlyContainer(props) {
   );
 }
 
+const flex = 'flex';
+const none = 'none';
+
 class FlyComponent extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {toggle: none};
-    // this.showText = this.showText.bind(this);
+    this.state = { toggle: none, change: 'menu-header menu-header--close-state' };
+    this.showText = this.showText.bind(this);
+  }
+
+  toggleClass() {
+    const changeClasses = this.state.change === 'menu-header menu-header--close-state' ? 'menu-header' : 'menu-header menu-header--close-state';
+    this.setState({ change: changeClasses });
+  }
+
+  showText() {
+    const changeText = this.state.toggle == none ? flex : none;
+    this.setState({ toggle: changeText });
+    this.toggleClass();
   }
 
   render() {
     return (
       <div>
-        <MenuHeader className="menu-header">Время вылета и прибытия</MenuHeader>
-        <div className="flyes-container">
+        <MenuHeader className="menu-header" onClick={this.showText} className={this.state.change}>Время вылета и прибытия</MenuHeader>
+        <div className="flyes-container" style={{ display: this.state.toggle }}>
           <div className="flyes-range-group">
             <FlyesDescr fly="Москва" fly2 ="Барселона" />
             <FlyContainer flyDescr="Вылет из" townName="Москвы" time="00.05" date="24 февраля" date2="23.45" timeBefore="24 фев."/>
