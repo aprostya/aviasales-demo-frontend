@@ -64,49 +64,35 @@ const HeaderStyled = styled(Header)`
   width: 100%;
 `;
 
-// function MenuLeftHeader(props) {
-//   return(
-
-//   )
-// }
-
-// function AviacompaniesContainer(props) {
-//   return (
-//     <div>
-//       <MenuHeader className="menu-header">Авиакомпании</MenuHeader>
-//       <div className="inputs-list">
-//         <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
-//         <ListItems title="Star Alliance" id="notransplantation" className="input-checkbox input-checkbox--transplantation" titleCost="11 150 &#8381;" />
-//         <ListItems title="OneWorld" id="transplantation-1" className="input-checkbox input-checkbox--transplantation" titleCost="12 370 &#8381;" />
-//         <ListItems title="SkyTeam" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" titleCost="16 290 &#8381;" />
-//         <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" />
-//       </div>
-//     </div>
-//   );
-// }
-
 const inline = 'inline';
 const none = 'none';
 
 class AviacompaniesComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { toggle: none };
+    this.state = { toggle: none, change: 'menu-header menu-header--close-state' };
     this.showText = this.showText.bind(this);
+    // this.toggleClass = this.toggleClass.bind(this);
+  }
+
+  toggleClass() {
+    const changeClasses = this.state.change === 'menu-header menu-header--close-state' ? 'menu-header' : 'menu-header menu-header--close-state';
+    this.setState({ change: changeClasses });
   }
 
   showText() {
     const changeText = this.state.toggle == none ? inline : none;
     this.setState({ toggle: changeText });
+    this.toggleClass();
   }
 
   render() {
     return (
       <div className="items-container items-container--aviacompanies">
-        <MenuHeader className="menu-header" onClick={this.showText}>
+        <MenuHeader onClick={this.showText} className={this.state.change}>
               Авиакомпании
         </MenuHeader>
-        <div style={{display: this.state.toggle}}>
+        <div style={{ display: this.state.toggle }}>
           <CustomCheckbox title="Несколько авиакомпаний" id="checkbox-custom-1" className="input-checkbox input-checkbox--transplantation" checkboxDescr="Показывать билеты с перелетами, выполняемыми несколькими авиакомпаниями, включая выбранную" />
           <div className="inputs-list">
             <h3 className="inputs-list__header">
