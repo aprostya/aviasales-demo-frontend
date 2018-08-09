@@ -9,9 +9,11 @@ import './style.css';
 import 'normalize.css';
 import MenuHeader from './MenuHeader';
 import FlyComponent from './FlyTime';
+import FlyInfoComponent from './FlyInfo';
 import TransferComponent from './Transfer';
 import LuggageComponent from './Luggage';
 import TravelTimeComponent from './TravelTime';
+
 import AviacompaniesComponent from './Aviacompanies';
 import AirportsComponent from './Airports';
 import AgentsComponent from './Agents';
@@ -41,8 +43,8 @@ function ListItems(props) {
         {props.title}
       </label>
       <PriceStyled className="fly-cost">
-{props.titleCost}
-</PriceStyled>
+        {props.titleCost}
+      </PriceStyled>
     </div>
   );
 }
@@ -57,25 +59,43 @@ const HeaderStyled = styled(Header)`
   width: 100%;
 `;
 
-// function MenuLeftHeader(props) {
-//   return(
+const flex = 'block';
+const none = 'none';
 
-//   )
-// }
+class TranspanationContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { toggle: none, change: 'menu-header menu-header--close-state' };
+    this.showText = this.showText.bind(this);
+  }
 
-function TranspanationContainer(props) {
-  return (
-    <Header className="transpilation-block">
-      <MenuHeader className="menu-header">{props.title}</MenuHeader>
-      <div className="inputs-list">
-        <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
-        <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation" titleCost="7 712 &#8381;" />
-        <ListItems title="1 пересадка" id="transplantation-1" className="input-checkbox input-checkbox--transplantation" titleCost="11 150 &#8381;" />
-        <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" titleCost="16 821 &#8381;" />
-        <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" />
-      </div>
-    </Header>
-  );
+  toggleClass() {
+    const changeClasses = this.state.change === 'menu-header menu-header--close-state' ? 'menu-header' : 'menu-header menu-header--close-state';
+    this.setState({ change: changeClasses });
+  }
+
+  showText() {
+    const changeText = this.state.toggle == none ? flex : none;
+    this.setState({ toggle: changeText });
+    this.toggleClass();
+  }
+
+  render() {
+    return (
+      <Header className="transpilation-block">
+        <MenuHeader onClick={this.showText} className={this.state.change}>
+          Прибытие
+        </MenuHeader>
+        <div className="inputs-list" style={{ display: this.state.toggle }}>
+          <ListItems title="Все" id="all" className="input-checkbox input-checkbox--transplantation" />
+          <ListItems title="Без пересадок" id="notransplantation" className="input-checkbox input-checkbox--transplantation" titleCost="7 712 &#8381;" />
+          <ListItems title="1 пересадка" id="transplantation-1" className="input-checkbox input-checkbox--transplantation" titleCost="11 150 &#8381;" />
+          <ListItems title="2 пересадки" id="transplantation-2" className="input-checkbox input-checkbox--transplantation" titleCost="16 821 &#8381;" />
+          <ListItems title="3 пересадки" id="transplantation-3" className="input-checkbox input-checkbox--transplantation" titleCost="23 986 &#8381;" />
+        </div>
+      </Header>
+    );
+  }
 }
 
 class TransplantionComponent extends React.Component {
@@ -87,18 +107,23 @@ class TransplantionComponent extends React.Component {
 
   render() {
     return (
+    <div className="col-lg-12 common-container">  
       <div className="col-lg-3 transpilantation-container">
-        <TranspanationContainer title="Прибытие" />
+        <TranspanationContainer />
         <FlyComponent />
-        <LuggageComponent/>
-        <TransferComponent/>
-        <TravelTimeComponent/>
-        <AviacompaniesComponent/>
-        <AirportsComponent/>
-        <AirportTranspilationsComponent/>
-        <AgentsComponent/>
-        <DisableFiltersComponent/>
+        <LuggageComponent />
+        <TransferComponent />
+        <TravelTimeComponent />
+        <AviacompaniesComponent />
+        <AirportsComponent />
+        <AirportTranspilationsComponent />
+        <AgentsComponent />
+        <DisableFiltersComponent />
       </div>
+    <div className="col-lg-6 flight-buy-container">
+        <FlyInfoComponent/>
+    </div> 
+    </div>  
     );
   }
 }

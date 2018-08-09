@@ -123,7 +123,6 @@ body {
 .transpilantation-container {
     font-size: 12px;
     color: #5B5B5C;
-    margin-top: 56px;
     border-bottom: 1px solid #DDDDDD;
     background-color: #fff;
 }
@@ -191,6 +190,18 @@ body {
     margin-right: 10px;
     color: #323333;
 }
+
+.common-container {
+    display: flex;
+    margin-top: 56px;
+}
+
+.flight-container {
+    background-color: #fff;
+    display: flex;
+}
+
+.
 
 .arrivals-list {
     line-height: 18px;
@@ -292,4 +303,7 @@ body {
 
 .select-container {
     margin-bottom: 10px; 
+}
+.buttons-container--flight-block {
+    margin-left: 0
 }

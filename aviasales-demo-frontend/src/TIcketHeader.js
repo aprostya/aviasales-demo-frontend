@@ -51,7 +51,7 @@ const MainHeaderStyled = styled(MainHeader)`
     padding-top: 14px;
     padding-bottom: 40px;
 `;
-const ButtonSearch = styled(Buttons)`
+const ButtonOrange = styled(Buttons)`
     width: 194px;
     height: 58px;
     font-size: 20px;
@@ -131,7 +131,7 @@ function PassangersSelectGroup(props) {
 function ButtonSearchOrange(props) {
   return (
     <div className="buttons-container">
-      <ButtonSearch className={props.className} children={props.children} />
+      <ButtonOrange className={props.className} children={props.children} />
     </div>
   );
 }
@@ -164,7 +164,6 @@ function InputesIcons(props) {
         placeholder={props.placeholder}
         defaultValue={props.defaultValue}
       />
-      {/* <SpanHeaderIcons/> */}
     </div>
   );
 }
