@@ -5,8 +5,16 @@ import ReactDOM from 'react-dom';
 import './style.css';
 
 
-function MenuHeader(props) {
-  return <h2 {...props} />;
+function Slider(props) {
+  return (
+      <div className="scale">
+        <div className="bar"></div>
+        <div className="range-toggle range-toggle-min">
+        </div>
+        <div className="range-toggle range-toggle-max">
+        </div>
+      </div>
+  )
 }
 
 export default MenuHeader;

@@ -21,7 +21,7 @@ class DisableFiltersComponent extends React.Component {
     return (
       <div>
         <MenuHeader className="menu-header menu-header--disable-filters">
-        Сбросить фильтры
+            Сбросить фильтры
         </MenuHeader>
       </div>
     );

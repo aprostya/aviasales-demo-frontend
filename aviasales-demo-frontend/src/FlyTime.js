@@ -67,7 +67,6 @@ function FlyContainer(props) {
     </div>
   );
 }
-
 const flex = 'flex';
 const none = 'none';
 

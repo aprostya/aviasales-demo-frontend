@@ -21,7 +21,7 @@ class AirportTranspilationsComponent extends React.Component {
     return (
       <div>
         <MenuHeader className="menu-header menu-header--close-state">
-        Аэропорт пересадки
+          Аэропорт пересадки
         </MenuHeader>
       </div>
     );

@@ -33,13 +33,13 @@ function Header(props) {
 function FlyesDescr(props) {
   return (
     <div className="flyes-names">
-          <span className="fly-item">
-{props.fly}
-</span>
-          <span className="fly-item">
-{props.fly2}
-</span>
-        </div>
+      <span className="fly-item">
+        {props.fly}
+      </span>
+      <span className="fly-item">
+        {props.fly2}
+      </span>
+    </div>
   );
 }
 
@@ -49,16 +49,16 @@ function Arrival(props) {
       <div className="arrives-container">
         <div className="arrivals-container__descr-group">
           <span className="arrive-descr arrive-descr--from">
-от
-{' '}
-{props.timeFrom2}
-</span>
+              от
+            {' '}
+            {props.timeFrom2}
+          </span>
           <span className="arrive-descr arrive-descr--to">
-{' '}
-до
-{' '}
-{props.timeBefore2}
-</span>
+            {' '}
+              до
+            {' '}
+            {props.timeBefore2}
+          </span>
         </div>
       </div>
     </div>
@@ -68,16 +68,16 @@ function Arrival(props) {
 function Slider(props) {
   return (
     <div className="scale">
-        <div className="bar" />
-        <div className="range-toggle range-toggle-min" />
-        <div className="range-toggle range-toggle-max" />
-      </div>
+      <div className="bar" />
+      <div className="range-toggle range-toggle-min" />
+      <div className="range-toggle range-toggle-max" />
+    </div>
   );
 }
 const flex = 'flex';
 const none = 'none';
 
-class TravelTimeComponent extends React.Component {
+export default class TravelTimeComponent extends React.Component {
   constructor(props) {
     super(props);
     this.state = { toggle: none, change: 'menu-header menu-header--close-state' };
@@ -117,6 +117,3 @@ class TravelTimeComponent extends React.Component {
     );
   }
 }
-
-
-export default TravelTimeComponent;

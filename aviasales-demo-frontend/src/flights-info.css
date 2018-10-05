@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+.bar--flight-info {
+    background-color: #A0B0B9;
+}
+
+.arrive-info-text {
+    font-size: 12px;
+    font-weight: normal;
+    color: #9CA5A8;
+}
+.arrive-info-text--time-fly {
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #000;
+}
+
+.arrive-info-text--city-name {
+    font-weight: bold;
+}
+
+.flights-info-group {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 23px;
+}
+
+.scale--flight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.flight-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 2px;
+    padding-top: 16px;
+}
+
+.arrives-container {
+    width: 100%;
+}
+
+.scale-sign {
+    margin: 0 auto;
+    color: #A0B0B9;
+    font-size: 12px;
+}
+
+.range-toggle--flight-list {
+    top: 16px;
+}
+
+.operator-name {
+    margin: 0 auto;
+    color: #A0B0B9;
+    font-size: 12px;
+    text-decoration: none;
+    margin-top: 8px;
+}
+.range-toggle-min--fly-info:before {
+    content: '';
+    position: absolute;
+    background-image: url('./img/flyTo.svg');
+    width: 16px;
+    height: 8px;
+    bottom: 27px;
+}
+
+.range-toggle-max--fly-info:before {
+    content: '';
+    position: absolute;
+    background-image: url('./img/flyFrom.svg');
+    width: 20px;
+    height: 18px;
+    top: -23px;
+}
+
+.baggage-icons-container__icon {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+}
+.baggage-icons-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 17px;
+}
+.baggage-icons-container__icon--luggage {
+    position: relative;
+    background-image: url('./img/baggage.svg');
+    top: 2px;
+    margin-right: 4px;
+}
+
+.baggage-icons-container__icon--luggage::after {
+    position: absolute;
+    content:  attr(data-content);
+    width: auto;
+    height: auto;
+    top: 6px;
+    left: 0;
+    right: 0;
+    font-size: 10px;
+    color: #9AB0B9;
+    text-align: center;
+}
+
+.baggage-icons-container__icon--handbag::after {
+    position: absolute;
+    content: "15";
+    font-size: 10px;
+    color: #9AB0B9;
+    text-align: center;
+    width: auto;
+    height: auto;
+    left: 0;
+    right: 0;
+    top: 6px;
+}
+
+.baggage-icons-container__icon--handbag {
+    position: relative;
+    width: 17px;
+    background-image: url('./img/baggage2.svg');
+    height: 23px;
+    align-self: flex-end;
+}
+
+.pin-fly {
+    cursor: pointer;
+    width: 22px;
+    margin-right: 5px;
+}
