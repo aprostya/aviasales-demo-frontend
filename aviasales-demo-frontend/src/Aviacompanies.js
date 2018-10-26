@@ -88,7 +88,7 @@ class AviacompaniesComponent extends React.Component {
 
   render() {
     return (
-      <div className="items-container items-container--aviacompanies">
+      <div className="items-container items-container--aviacompanies transpilation-block">
         <MenuHeader onClick={this.showText} className={this.state.change}>
               Авиакомпании
         </MenuHeader>

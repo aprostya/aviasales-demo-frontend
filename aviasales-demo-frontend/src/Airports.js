@@ -19,7 +19,7 @@ class AirportsComponent extends React.Component {
 
   render() {
     return (
-      <div className="select-container">
+      <div className="select-container transpilation-block">
         <MenuHeader className="menu-header menu-header--close-state">
         Аэропорты
         </MenuHeader>

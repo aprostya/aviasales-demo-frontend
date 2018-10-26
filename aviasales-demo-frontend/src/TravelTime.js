@@ -97,7 +97,7 @@ export default class TravelTimeComponent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="transpilation-block">
         <MenuHeader onClick={this.showText} className={this.state.change}>
           Время в пути
         </MenuHeader>

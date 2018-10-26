@@ -93,10 +93,11 @@ const SpanHeaderIconsStyled = SpanHeaderStyled.extend `
 `;
 
 const PassangersSelectStyled = styled(InputsContainer)`
-    width: 100%;
+    width: auto;
     height: 20px;
     font-size: 16px;
     padding: 18px;
+    padding-right: 20px;
     background-color: #fff;
     border: 1px solid #fff;
     position: relative;
@@ -208,7 +209,7 @@ class HeaderComponent extends React.Component {
             <Inputes className="input input--calendar_to" id="input-calendar-to" placeholder="3 марта, сб" />
             <SpanHeaderIconsStyled className={this.spanObject.spanName2} />
             <PassangersSelectGroup className="input input--dropdown" id="input--dropdown" children="1 пассажир, эконом" />
-            <SpanHeaderIconsStyled className={this.spanObject.spanName3} />
+            {/* <SpanHeaderIconsStyled className={this.spanObject.spanName3} /> */}
             <ButtonSearchOrange className="btn btn--search" children="Найти билеты" />
           </InputsContainerStyled>
         </div>

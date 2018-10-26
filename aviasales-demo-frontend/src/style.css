@@ -124,7 +124,7 @@ body {
     color: #5B5B5C;
     border-bottom: 1px solid #DDDDDD;
     background-color: #fff;
-    flex-basis: 20%;
+    flex-basis: 22%;
 }
 
 .menu-header {
@@ -214,7 +214,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-right: 16px;
+    /* margin-right: 16px; */
 }
 
 .arrive-descr {
@@ -310,8 +310,8 @@ body {
 }
 
 .flight-buy-container {
-    max-width: 60%;
-    flex-basis: 60%;
+    max-width: 56%;
+    flex-basis: 56%;
 }
 
 .buy-container {
@@ -351,6 +351,10 @@ body {
     float: right;
     text-transform: uppercase;
     cursor: pointer;
+}
+.chart-label:hover {
+    background-color: #00ACE2;
+    color: #fff;
 }
 .company-info {
     position: relative;
@@ -393,4 +397,18 @@ body {
 
 .flight-container {
     margin-bottom: 20px;
+}
+
+.rc-slider-step {
+    background-color: red;
+}
+
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown-wrapper::before {
+    content: '';
+    position: absolute;
+    background-image: 
 }

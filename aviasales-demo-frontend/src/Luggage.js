@@ -19,7 +19,7 @@ class LuggageComponent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="transpilation-block">
         <MenuHeader className="menu-header menu-header--close-state">
         Багаж
         </MenuHeader>

@@ -19,7 +19,7 @@ class TransferComponent extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="transpilation-block">
         <MenuHeader className="menu-header menu-header--close-state">
           Длительность пересадки
         </MenuHeader>

@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import './flights-info.css';
 import redwings from './img/redwings.png';
 import nordwind from './img/nordwind.png';
-import Slider from 'react-rangeslider';
 import 'flexboxgrid2/flexboxgrid2.css';
 import './style.css';
 import 'normalize.css';
@@ -138,24 +137,24 @@ function ArrivalsInfoPinFly(props) {
   );
 }
 
-// function Slider(props) {
-//   return (
-//     <div className="scale scale--flight">
-//       <span className="scale-sign">
-//         {props.scaleSign}
-//       </span>
-//       <div className="bar  bar--flight-info" />
-//       <div className="range-toggle range-toggle--flight-list range-toggle-min range-toggle-min--fly-info" />
-//       <span className="airoport-name airoport-name--left">
-//         {props.airoportName}
-//       </span>
-//       <div className="range-toggle range-toggle--flight-list range-toggle-max range-toggle-max--fly-info" />
-//       <span className="airoport-name airoport-name--right">
-//         {props.airoportName2}
-//       </span>
-//     </div>
-//   );
-// }
+function Slider(props) {
+  return (
+    <div className="scale scale--flight">
+      <span className="scale-sign">
+        {props.scaleSign}
+      </span>
+      <div className="bar  bar--flight-info" />
+      <div className="range-toggle range-toggle--flight-list range-toggle-min range-toggle-min--fly-info" />
+      <span className="airoport-name airoport-name--left">
+        {props.airoportName}
+      </span>
+      <div className="range-toggle range-toggle--flight-list range-toggle-max range-toggle-max--fly-info" />
+      <span className="airoport-name airoport-name--right">
+        {props.airoportName2}
+      </span>
+    </div>
+  );
+}
 
 function BuyTicket() {
   return (
